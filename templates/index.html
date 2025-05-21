@@ -1,0 +1,610 @@
+{% extends 'base.html' %}
+
+{% block title %}R&F Cosméticos - Perfumes Importados Originais{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Carousel -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h1 class="hero-title animate__animated animate__fadeInUp">
+                    <span class="highlight">Originalidade</span> que se sente no ar!
+                </h1>
+                <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">
+                    Perfumes importados 100% originais direto das melhores marcas internacionais.
+                </p>
+                <div class="hero-btns animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="#produtos" class="btn btn-primary">Ver Produtos</a>
+                    <a href="https://wa.me/5521999317808" target="_blank" class="btn btn-outline-primary ms-3">
+                        <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="carousel-img-container">
+                                <img src="/static/images/logo.svg" alt="Logotipo R&F Cosméticos" class="overlay-logo">
+                                <img src="{{ url_for('static', filename='images/InvictusMasculino.jpg') }}" class="d-block w-100" alt="Importado Masculino">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-container">
+                                <img src="/static/images/logo.svg" alt="Logotipo R&F Cosméticos" class="overlay-logo">
+                                <img src="{{ url_for('static', filename='images/212Feminino.jpg') }}" class="d-block w-100" alt="Importado Feminino">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-container">
+                                <img src="/static/images/logo.svg" alt="Logotipo R&F Cosméticos" class="overlay-logo">
+                                <img src="{{ url_for('static', filename='images/Arabe.jpg') }}" class="d-block w-100" alt="Árabe">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-container">
+                                <img src="/static/images/logo.svg" alt="Logotipo R&F Cosméticos" class="overlay-logo">
+                                <img src="{{ url_for('static', filename='images/Kit.jpg') }}" class="d-block w-100" alt="Kit">
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-img-container">
+                                <img src="/static/images/logo.svg" alt="Logotipo R&F Cosméticos" class="overlay-logo">
+                                <img src="{{ url_for('static', filename='images/Nicho.jpg') }}" class="d-block w-100" alt="Nicho">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>100% Originais</h3>
+                    <p>Todos os nossos produtos são autênticos, com garantia de procedência e qualidade.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Entregas no mesmo dia para o RJ (pedidos até 12h) e envio para todo Brasil.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>10+ Anos de Experiência</h3>
+                    <p>Mais de uma década de experiência trazendo fragrâncias exclusivas para o Brasil.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="produtos" class="products-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Nossas Fragrâncias</h2>
+            <p class="section-subtitle">Trabalhamos com diversas linhas para todos os estilos</p>
+        </div>
+        
+        <ul class="nav nav-pills product-filter justify-content-center mb-5" id="productTabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="pill" href="#todos">Todos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#masculinos">Masculinos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#femininos">Femininos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#kits">Kits</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#arabes">Árabes</a>
+            </li>
+        </ul>
+        
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="todos">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/InvictusMasculino.jpg') }}" alt="Invictus Paco Rabanne" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o perfume Invictus Masculino" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Invictus</h3>
+                                <p class="product-brand">Paco Rabanne</p>
+                                <div class="product-category">Masculino</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/212Feminino.jpg') }}" alt="212 VIP Carolina Herrera" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o perfume 212 VIP Feminino" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">212 VIP</h3>
+                                <p class="product-brand">Carolina Herrera</p>
+                                <div class="product-category">Feminino</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/Kit.jpg') }}" alt="Kit Versace Pour Homme" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o Kit Versace Pour Homme" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Pour Homme Kit</h3>
+                                <p class="product-brand">Versace</p>
+                                <div class="product-category">Kit</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/Nicho.jpg') }}" alt="Aventus Creed" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o perfume Aventus Creed" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Aventus</h3>
+                                <p class="product-brand">Creed</p>
+                                <div class="product-category">Nicho</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/Arabe.jpg') }}" alt="Khanjar" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o perfume Khanjar" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Khanjar</h3>
+                                <p class="product-brand">Niche Emirati</p>
+                                <div class="product-category">Árabe</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filtered tabs content - would be populated with actual filtered products -->
+            <div class="tab-pane fade" id="masculinos">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/InvictusMasculino.jpg') }}" alt="Invictus Paco Rabanne" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o perfume Invictus Masculino" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Invictus</h3>
+                                <p class="product-brand">Paco Rabanne</p>
+                                <div class="product-category">Masculino</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/Nicho.jpg') }}" alt="Aventus Creed" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o perfume Aventus Creed" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Aventus</h3>
+                                <p class="product-brand">Creed</p>
+                                <div class="product-category">Nicho</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="femininos">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/212Feminino.jpg') }}" alt="212 VIP Carolina Herrera" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o perfume 212 VIP Feminino" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">212 VIP</h3>
+                                <p class="product-brand">Carolina Herrera</p>
+                                <div class="product-category">Feminino</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="kits">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/Kit.jpg') }}" alt="Kit Versace Pour Homme" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o Kit Versace Pour Homme" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Pour Homme Kit</h3>
+                                <p class="product-brand">Versace</p>
+                                <div class="product-category">Kit</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-pane fade" id="arabes">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="{{ url_for('static', filename='images/Arabe.jpg') }}" alt="Khanjar" class="product-img">
+                                <div class="product-overlay">
+                                    <a href="https://wa.me/5521999317808?text=Olá! Gostaria de saber mais sobre o perfume Khanjar" class="btn btn-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Consultar
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3 class="product-title">Khanjar</h3>
+                                <p class="product-brand">Niche Emirati</p>
+                                <div class="product-category">Árabe</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="https://wa.me/5521999317808?text=Olá! Gostaria de ver todos os perfumes disponíveis" target="_blank" class="btn btn-primary btn-lg">
+                <i class="fab fa-whatsapp me-2"></i> Ver catálogo completo
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Diferentials Section -->
+<section id="diferenciais" class="diferentials-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Nossos Diferenciais</h2>
+            <p class="section-subtitle">Por que escolher a R&F Cosméticos?</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="diferential-card">
+                    <div class="diferential-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="diferential-content">
+                        <h3>100% Originais e Lacrados</h3>
+                        <p>Todos os nossos produtos são adquiridos diretamente de distribuidores oficiais, garantindo sua autenticidade. Cada frasco vem selado e com todas as garantias do fabricante.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="diferential-card">
+                    <div class="diferential-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <div class="diferential-content">
+                        <h3>Mais de 10 Anos de Mercado</h3>
+                        <p>Nossa experiência nos permite selecionar os melhores fornecedores e garantir a qualidade de cada produto que comercializamos.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="diferential-card">
+                    <div class="diferential-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="diferential-content">
+                        <h3>Envio Rápido e Seguro</h3>
+                        <p>Entregas no mesmo dia para o Rio de Janeiro (pedidos confirmados até 12h) e envio para todo o Brasil com rastreamento e embalagem segura.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="diferential-card">
+                    <div class="diferential-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="diferential-content">
+                        <h3>Embalagens Premium</h3>
+                        <p>Se você está comprando para presentear, oferecemos embalagens especiais e papel de presente para tornar seu mimo ainda mais especial.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="certification-badges text-center mt-4">
+            <span class="badge-item">
+                <i class="fas fa-certificate"></i>
+                <span>Garantia de Originalidade</span>
+            </span>
+            <span class="badge-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Produtos Certificados</span>
+            </span>
+            <span class="badge-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Compra Segura</span>
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="depoimentos" class="testimonials-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <p class="section-subtitle">Experiências reais de quem já comprou conosco</p>
+        </div>
+        
+        <div class="testimonials-slider">
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Comprei um perfume árabe masculino e fiquei surpreso com a fixação! Atendimento excelente."</p>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Carlos A.</h4>
+                                    <span>Rio de Janeiro - RJ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Perfume original, embalagem perfeita, chegou muito rápido. Super recomendo!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Juliana F.</h4>
+                                    <span>Niterói - RJ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Comprei um kit para dar de presente e minha esposa amou! Ótima qualidade e apresentação."</p>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>André L.</h4>
+                                    <span>Duque de Caxias - RJ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">"Usei o perfume o dia todo e ainda senti no final da noite. Originalíssimo!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-info">
+                                    <h4>Mariana G.</h4>
+                                    <span>São Paulo - SP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content text-center">
+            <h2>Sinta a essência da sofisticação!</h2>
+            <p>Para ver os preços e promoções exclusivas, fale conosco pelo WhatsApp</p>
+            <a href="https://wa.me/5521999317808" target="_blank" class="btn btn-cta">
+                <i class="fab fa-whatsapp me-2"></i> Fale com a R&F Cosméticos
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <p class="section-subtitle">Tire suas dúvidas sobre nossos produtos e serviços</p>
+        </div>
+        
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Os perfumes são originais mesmo?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Sim! Trabalhamos somente com produtos 100% originais, lacrados e com garantia de procedência. Todos nossos produtos são adquiridos de distribuidores oficiais e importadores autorizados.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Como funciona a entrega?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Enviamos para todo o Brasil com embalagem segura e rastreio. Para o Rio de Janeiro, temos entregas no mesmo dia (pedidos confirmados até 12h) e também fazemos entregas agendadas. Todos os envios incluem proteção extra para garantir que seu perfume chegue perfeito.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Tem opções para presente?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Claro! Temos kits especiais com embalagens premium para presentear. Além disso, oferecemos opção de embrulho para presente com cartão personalizado. Basta nos informar no momento da compra.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Quanto tempo de mercado vocês têm?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Estamos há mais de 10 anos no mercado de cosméticos e perfumaria de luxo. Nossa experiência nos permite oferecer os melhores produtos e um atendimento personalizado para cada cliente.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Como faço para comprar?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Basta clicar no botão do WhatsApp em qualquer lugar do site e falar com nossa equipe. Você também pode nos ligar ou enviar mensagem pelo Instagram ou Facebook. O pagamento pode ser feito via Pix, transferência bancária, cartão de crédito ou dinheiro (para entregas em mãos).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <h2>Sinta a essência da sofisticação com a R&F Cosméticos!</h2>
+                <p>Escolha o perfume que mais combina com você ou com quem você ama. Nosso time está pronto para te atender agora mesmo!</p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <a href="https://wa.me/5521999317808" target="_blank" class="btn btn-white-gold">
+                    <i class="fab fa-whatsapp me-2"></i> Fale conosco
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

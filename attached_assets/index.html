@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>R&F Cosméticos - Perfumes Importados Originais</title>
+  <style>
+    :root {
+      --rosa: #f8e1e7;
+      --dourado: #e6c07b;
+      --branco: #fff;
+      --cinza: #f5f5f5;
+      --cinza-escuro: #333;
+      --rosa-escuro: #d291bc;
+      --verde-whatsapp: #25D366;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--cinza);
+      color: var(--cinza-escuro);
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+      background: var(--branco);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(210,145,188,0.07);
+      margin-bottom: 30px;
+    }
+    h1, h2, h3 {
+      color: var(--rosa-escuro);
+      margin-top: 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    .carousel {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      margin: 30px 0 20px 0;
+    }
+    .carousel img {
+      width: 320px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 2px solid var(--rosa-escuro);
+      background: var(--rosa);
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(230,192,123,0.10);
+    }
+    .perfume-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .perfume-card {
+      background: var(--rosa);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(210,145,188,0.08);
+      padding: 18px;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .perfume-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(210,145,188,0.15);
+    }
+    .perfume-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      border: 1.5px solid var(--dourado);
+      background: var(--branco);
+    }
+    .whatsapp-btn {
+      background: linear-gradient(90deg, var(--rosa-escuro), var(--dourado));
+      color: var(--branco);
+      padding: 14px 32px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 24px;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(230,192,123,0.10);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .whatsapp-btn:hover {
+      background: linear-gradient(90deg, var(--dourado), var(--rosa-escuro));
+      transform: scale(1.04);
+    }
+    .selos-container {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+    .selo {
+      width: 70px;
+      background: var(--branco);
+      border-radius: 50%;
+      border: 2px solid var(--dourado);
+      padding: 8px;
+      box-shadow: 0 2px 8px rgba(230,192,123,0.10);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px 0;
+    }
+    ul li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      padding-left: 1.2em;
+      position: relative;
+    }
+    ul li:before {
+      content: "•";
+      color: var(--dourado);
+      font-size: 1.5em;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+    .comentario {
+      background: var(--rosa);
+      padding: 18px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      font-size: 1.05rem;
+      border-left: 5px solid var(--dourado);
+      box-shadow: 0 2px 8px rgba(210,145,188,0.07);
+    }
+    footer {
+      background: var(--rosa-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 32px 20px 20px 20px;
+      font-size: 15px;
+      border-radius: 0 0 16px 16px;
+      margin: 0 0 20px 0;
+    }
+    footer a {
+      color: var(--dourado);
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 6px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 700px) {
+      section { padding: 24px 6px; }
+      .carousel img { width: 220px; height: 140px; }
+      .selos-container { gap: 10px; }
+      .selo { width: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SEÇÃO 1 - HEADLINE E CARROSSEL -->
+<section>
+  <h1>✨ R&F Cosméticos – Originalidade que se sente no ar!</h1>
+  <p style="font-size:1.2rem; color:var(--dourado); font-weight:500;">
+    💎 Perfumes importados 100% originais direto das melhores marcas internacionais.
+  </p>
+  <!-- Carrossel de Imagens -->
+  <div class="carousel" id="carousel">
+    <img src="InvictusMasculino.jpg" alt="Invictus Masculino" class="carousel-img active">
+    <img src="212Feminino.jpg" alt="212 Feminino" class="carousel-img">
+    <img src="Kit.jpg" alt="Kit de Perfumes" class="carousel-img">
+    <img src="Arabe.jpg" alt="Perfume Árabe" class="carousel-img">
+    <img src="Nicho.jpg" alt="Perfume de Nicho" class="carousel-img">
+    <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+  </div>
+  <h3>Há mais de 10 anos levando qualidade, elegância e autenticidade para clientes exigentes como você.</h3>
+</section>
+
+<script>
+let currentSlide = 0;
+const imgs = document.querySelectorAll('.carousel-img');
+function showSlide(n) {
+  imgs.forEach((img, i) => {
+    img.style.display = i === n ? 'block' : 'none';
+  });
+}
+function moveCarousel(dir) {
+  currentSlide += dir;
+  if (currentSlide < 0) currentSlide = imgs.length - 1;
+  if (currentSlide >= imgs.length) currentSlide = 0;
+  showSlide(currentSlide);
+}
+function autoCarousel() {
+  currentSlide++;
+  if (currentSlide >= imgs.length) currentSlide = 0;
+  showSlide(currentSlide);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  showSlide(currentSlide);
+  setInterval(autoCarousel, 3000);
+});
+</script>
+
+<!-- SEÇÃO 2 - CATÁLOGO DE PERFUMES -->
+<section>
+  <h2>💫 Trabalhamos com diversas linhas para todos os estilos:</h2>
+  <div class="perfume-grid">
+    <div class="perfume-card">
+      <img src="InvictusMasculino.jpg" alt="Invictus - Perfume Masculino">
+      <h3>Importados Masculinos – Invictus</h3>
+    </div>
+    <div class="perfume-card">
+      <img src="212Feminino.jpg" alt="212 - Feminino">
+      <h3>Importados Femininos – 212</h3>
+    </div>
+    <div class="perfume-card">
+      <img src="Kit.jpg" alt="Kit de perfumes">
+      <h3>Kits Exclusivos para Presentear</h3>
+    </div>
+    <div class="perfume-card">
+      <img src="Nicho.jpg" alt="Nicho">
+      <h3>Perfumes de Nicho – Raros e Sofisticados</h3>
+    </div>
+    <div class="perfume-card">
+      <img src="Arabe.jpg" alt="Árabes">
+      <h3>Perfumes Árabes – Marcantes e Duradouros</h3>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO 3 - DIFERENCIAIS -->
+<section>
+  <h2>🔍 Nossos Diferenciais</h2>
+  <ul>
+    <li>🔒 100% Originais e Lacrados</li>
+    <li>💼 Mais de 10 Anos de Mercado</li>
+    <li>🚚 Envio Rápido e Seguro</li>
+    <li>📦 Embalagens Premium e Atendimento Personalizado</li>
+  </ul>
+  <div class="selos-container">
+    <img class="selo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Check_green_icon.svg/1024px-Check_green_icon.svg.png" alt="Selo originalidade">
+    <img class="selo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Seal_of_approval_icon.svg/1024px-Seal_of_approval_icon.svg.png" alt="Selo aprovação">
+    <img class="selo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Secure_icon_padlock.svg/1024px-Secure_icon_padlock.svg.png" alt="Selo segurança">
+  </div>
+</section>
+
+<!-- SEÇÃO 4 - COMENTÁRIOS DE CLIENTES -->
+<section>
+  <h2>❤️ O que nossos clientes dizem:</h2>
+  <div class="comentario">⭐⭐⭐⭐⭐ "Comprei um perfume árabe masculino e fiquei surpreso com a fixação! Atendimento excelente." — Carlos A. - RJ</div>
+  <div class="comentario">⭐⭐⭐⭐⭐ "Perfume original, embalagem perfeita, chegou muito rápido. Super recomendo!" — Juliana F. - Niterói</div>
+  <div class="comentario">⭐⭐⭐⭐⭐ "Comprei um kit para dar de presente e minha esposa amou! Ótima qualidade e apresentação." — André L. - Duque de Caxias</div>
+  <div class="comentario">⭐⭐⭐⭐⭐ "Atendimento via WhatsApp é muito atencioso. Fiquei satisfeita com a compra!" — Fernanda M. - Petrópolis</div>
+  <div class="comentario">⭐⭐⭐⭐⭐ "Usei o perfume o dia todo e ainda senti no final da noite. Originalíssimo!" — Mariana G. - SP</div>
+  <div class="comentario">⭐⭐⭐⭐⭐ "Meu marido amou o presente. Comprarei novamente com certeza!" — Aline T. - RJ</div>
+  <div class="comentario">⭐⭐⭐⭐⭐ "Achei aquele perfume que procurava há anos. Super confiável!" — Vanessa S. - São Paulo</div>
+</section>
+
+<!-- SEÇÃO 5 - CTA PARA WHATSAPP -->
+<section>
+  <h2>📲 Veja os perfumes disponíveis</h2>
+  <p>Para ver os preços e promoções exclusivas, clique no botão abaixo e fale diretamente com nosso time pelo WhatsApp:</p>
+  <a href="https://wa.me/5521999317808" target="_blank" class="whatsapp-btn">
+    💬 Ver preços e promoções no WhatsApp
+  </a>
+</section>
+
+<!-- SEÇÃO 6 - FAQ -->
+<section>
+  <h2>❓ Perguntas Frequentes</h2>
+  <p><strong>🔐 Os perfumes são originais mesmo?</strong><br>Sim! Trabalhamos somente com produtos 100% originais, lacrados e com garantia de procedência.</p>
+  <p><strong>📦 Como funciona a entrega?</strong><br>Enviamos para todo o Brasil com embalagem segura e rastreio. Entregas no RJ confirmadas até 12h chegam no mesmo dia.</p>
+  <p><strong>🎁 Tem opções para presente?</strong><br>Claro! Temos kits especiais com embalagens premium para presentear.</p>
+  <p><strong>🕰️ Quanto tempo de mercado vocês têm?</strong><br>Mais de 10 anos de atuação em cosméticos e perfumaria de luxo.</p>
+  <p><strong>📲 Como faço para comprar?</strong><br>Basta clicar no botão do WhatsApp e falar com nossa equipe. Rápido, fácil e seguro.</p>
+</section>
+
+<!-- SEÇÃO 7 - CHAMADA FINAL + REDES SOCIAIS -->
+<section>
+  <h2>🌟 Sinta a essência da sofisticação com a R&F Cosméticos!</h2>
+  <p>Escolha o perfume que mais combina com você ou com quem você ama. Nosso time está pronto para te atender agora mesmo!</p>
+  <a href="https://wa.me/5521999317808" target="_blank" class="whatsapp-btn">
+    ✨ Fale com a R&F Cosméticos no WhatsApp
+  </a>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <p>R&F Cosméticos © 2025 – Todos os direitos reservados<br>
+  📍 Rio de Janeiro - RJ | 📦 Enviamos para todo o Brasil<br>
+  💬 Atendimento via WhatsApp todos os dias</p>
+  <p>
+    🔗 Redes Sociais:<br>
+    <a href="https://www.facebook.com/rfcosmeticosrj/" target="_blank">Facebook</a> |
+    <a href="https://www.instagram.com/rfcosmeticosrj/" target="_blank">Instagram</a>
+  </p>
+</footer>
+
+</body>
+</html> 
